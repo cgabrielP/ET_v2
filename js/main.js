@@ -1,3 +1,4 @@
+//solo probe cambiar de rama
 const productos = [{
     precio: 1500,
     descripcion: "Comida perro blanda 100gr",
@@ -19,6 +20,7 @@ const productos = [{
     valoracion: 4.9
 }
 ];
+
 const listadoProductos = [
     {
         precio: 1500,
