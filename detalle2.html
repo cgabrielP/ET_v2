@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="img/th.png" type="image/png" />
+
+    <title>detalle2</title>
+  </head>
+  <body>
+    <div class="container-fluid px-4">
+      <!-- barrita sobre navbar -->
+      <nav class="navbar navbar-expand-lg bg-dark fs-6 py-0">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarOfertas">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <div class="d-flex">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Centro de Ayuda</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"
+                    >Estado de tu pedido</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Medios de Envio</a>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <button
+                      class="btn dropdown-toggle text-white"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Nuestros Destacados
+                    </button>
+                    <ul class="dropdown-menu"></ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- navbar principal -->
+      <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img width="70" height="40" src="img/logol.png" alt="" srcset="" />
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center"
+            >
+              <li class="nav-item">
+                <div class="dropdown ps-2">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-location-dot fs-4 text-success"></i>
+                    Elige tu modo de entrega
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button class="dropdown-item d-block" type="button">
+                        Action
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button">
+                        Another action
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button">
+                        Something else here
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="col-sm-12 col-lg-4 col-xl-6">
+              <form class="d-flex" role="search">
+                <div class="input-group">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="¿Qué estas buscando?"
+                    aria-label="¿Qué estas buscando?"
+                  />
+                  <span
+                    role="button"
+                    type="submit"
+                    class="input-group-text bg-success"
+                    id="basic-addon2"
+                  >
+                    <i class="fa-solid fa-magnifying-glass text-light"></i>
+                  </span>
+                </div>
+              </form>
+            </div>
+
+            <div class="dropdown nav-link">
+              <button
+                class="btn dropdown-toggle fw-bold"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-regular fs-4 fa-user text-success px-1"></i>
+                Ingresa/Registrate
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button class="dropdown-item d-block" type="button">
+                    <a
+                      class="text-decoration-none text-dark"
+                      href="inicioSesion.html"
+                      >Ingresar</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item d-block text-success"
+                    type="button"
+                  >
+                    <a class="text-success fw-bold" href="registro.html"
+                      >Registrarse</a
+                    >
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <button
+              class="btn position-relative"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span
+                class="position-absolute top-0 start-1000 translate-middle badge rounded-pill bg-danger"
+              >
+                1
+              </span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- segundo navbar -->
+      <nav class="navbar navbar-expand-lg bg-success bg-opacity-10">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarOfertas">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown bg-success rounded mx-2">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-table-cells-large"></i>
+                  Todas las categorías
+                </a>
+                <ul class="dropdown-menu"></ul>
+              </li>
+              <li class="nav-item dropdown bg-warning bg-opacity-25 rounded">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-percent"></i>
+                  Ofertas
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item mb-1" href="ofertas.html">
+                      <i class="fa-solid fa-lightbulb me-1 text-warning"></i>Mas
+                      vendido</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item mb-1" href="#"
+                      ><i class="fa-solid fa-dog me-1 text-danger-emphasis"></i
+                      >Perro</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><i class="fa-solid fa-cat me-1 text-danger-emphasis"></i
+                      >Gatos</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Favoritos</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Revista</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- carrito de compra -->
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">
+            Tienes 1 producto(s)
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="row border-bottom">
+            <div class="col-9">
+              <div class="mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-5">
+                    <img
+                      src="img/685421-280-280.webp"
+                      class="img-fluid rounded-start"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <div class="card-title fs-6">Comida de perro 100 Gr</div>
+                      <div
+                        class="btn-group align-items-center mt-2"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" class="btn btn-success">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <div class="px-1">1 un.</div>
+                        <button type="button" class="btn btn-success">
+                          <i class="fa-solid fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="fw-bold">$890</div>
+
+              <div
+                role="button"
+                class="fw-bold mt-5 text-success text-decoration-underline"
+              >
+                Eliminar
+              </div>
+            </div>
+          </div>
+          <div class="offcanvas-footer">
+            <div class="row pb-3">
+              <div class="col-9">Subtotal</div>
+              <div class="col-3">$890</div>
+            </div>
+            <div class="row pb-3">
+              <div class="col-10 fs-6 fw-light">
+                Monto minimo de compras <b>$10.000</b>
+              </div>
+            </div>
+            <div class="row pb-3 d-flex justify-content-end">
+              <div class="col-5 btn btn-success">Comprar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- detalle -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row gx-5">
+            <aside class="col-lg-6">
+              <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                <a
+                  data-fslightbox="mygalley"
+                  class="rounded-4"
+                  target="_blank"
+                  data-type="image"
+                  href="img/685421-280-280.webp"
+                  class="rounded mx-auto d-block"
+                  alt="..."
+                >
+                  <img
+                    style="max-width: 100%; height: 350px; margin: auto"
+                    class="rounded-4 fit"
+                    src="img/685421-280-280.webp"
+                    class="rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </a>
+              </div>
+              <div class="d-flex justify-content-center mb-3">
+                <a
+                  data-fslightbox="mygalley"
+                  class="border mx-1 rounded-2"
+                  target="_blank"
+                  data-type="image"
+                  href="img/wmtcl (4).webp"
+                  class="rounded mx-auto d-block"
+                  alt="..."
+                  class="item-thumb"
+                >
+                  <img
+                    width="60"
+                    height="60"
+                    class="rounded-2"
+                    src="img/wmtcl (4).webp"
+                    class="rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  data-fslightbox="mygalley"
+                  class="border mx-1 rounded-2"
+                  target="_blank"
+                  data-type="image"
+                  href="img/wmtcl (5).webp"
+                  class="rounded mx-auto d-block"
+                  alt="..."
+                  class="item-thumb"
+                >
+                  <img
+                    width="60"
+                    height="60"
+                    class="rounded-2"
+                    src="img/wmtcl (5).webp"
+                    class="rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  data-fslightbox="mygalley"
+                  class="border mx-1 rounded-2"
+                  target="_blank"
+                  data-type="image"
+                  href="img/wmtcl (6).webp"
+                  class="rounded mx-auto d-block"
+                  alt="..."
+                  class="item-thumb"
+                >
+                  <img
+                    width="60"
+                    height="60"
+                    class="rounded-2"
+                    src="img/wmtcl (6).webp"
+                    class="rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  data-fslightbox="mygalley"
+                  class="border mx-1 rounded-2"
+                  target="_blank"
+                  data-type="image"
+                  href="img/wmtcl (7).webp"
+                  class="rounded mx-auto d-block"
+                  alt="..."
+                  class="item-thumb"
+                >
+                  <img
+                    width="60"
+                    height="60"
+                    class="rounded-2"
+                    src="img/wmtcl (7).webp"
+                    class="rounded mx-auto d-block"
+                    alt="..."
+                  />
+                </a>
+              </div>
+            </aside>
+            <main class="col-lg-6">
+              <div class="ps-lg-3">
+                <h4 class="title text-dark">
+                  Alimento Humedo Perro Adulto Sabor Carne Pouch, 100 gr <br />
+                </h4>
+                <div class="d-flex flex-row my-3">
+                  <div class="text-warning mb-1 me-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <span class="ms-1"> 4.0</span>
+                  </div>
+                  <span class="text-muted"
+                    ><i class="fas fa-shopping-basket fa-sm mx-1"></i>14
+                    ordenes</span
+                  >
+                  <span class="text-success ms-2">En existencias</span>
+                </div>
+
+                <div class="mb-3">
+                  <span class="h5">$890</span>
+                </div>
+
+                <p>
+                  En PEDIGREE® creemos que todos los perros merecen un hogar
+                  lleno de amor. Ellos alimentan lo mejor de nosotros y queremos
+                  alimentar lo mejor de ellos, por eso trabajamos duro por darle
+                  a cada uno de ellos una nutrición completa, balanceada y de
+                  calidad.​PEDIGREE® alimento seco es elaborado bajo estrictos
+                  estándares de calidad y basado en el conocimiento científico
+                  de WALTHAM®, una autoridad líder en nutrición animal. Las
+                  recetas de PEDIGREE® ayudan a su sistema inmune gracias a su
+                  contenido de antioxidantes, vitamina E y Selenio. Además,
+                  están hechas con Omega 6 que ayudan a una piel y pelo
+                  saludables, así como con fibras y proteína de alta calidad que
+                  ayudan a una óptima digestión y heces firmes fáciles de
+                  recoger.
+                </p>
+
+                <div class="row">
+                  <dt class="col-3">RAZA</dt>
+                  <dd class="col-9">mediana/grande</dd>
+
+                  <dt class="col-3">INGREDIENTES</dt>
+                  <dd class="col-9">
+                    Agua, menudencias bovinas y/o porcinas y/o de pollo,
+                    subproductos de pollo, subproductos porcinos y/o bovinos y/o
+                    de pescado, harina de trigo, plasma bovino y/o porcino y/o
+                    harina de subproductos de pollo y/o gluten de trigo y/o
+                    gluten de maíz y/o harina de soja, aceite de pollo y/o de
+                    soja, pulpa de remolacha, espesantes (goma xantana y/o
+                    almidones modificados), estabilizante (tripolifosfato de
+                    sodio) Ácido ascórbico, cloruro de colina, E, B5, B1, B2,
+                    B6, ácido fólico, D3. Fosfato dicálcico, cloruro de sodio,
+                    carbonato de calcio, cloruro de potasio, óxido de magnesio,
+                    óxido de zinc, sulfato de cobre, sulfato de manganeso,
+                    iodato de calcio..
+                  </dd>
+
+                  <dt class="col-3">INFORMACION NUTRICIONAL</dt>
+
+                  <dd class="col-9">
+                    Proteína Cruda (Mín.) 8,00% Fibra Cruda (Máx.) 1,50% Fósforo
+                    (Mín.-Máx.) 0,11 – 0,30% Calcio (Mín.-Máx.) 0,15 – 0,45%
+                    Humedad (Máx.) 82,00%
+                  </dd>
+
+                  <dt class="col-3">RECOMENDACIONES</dt>
+                  <dd class="col-9">
+                    1 sobre = 100 gramos / 1 TAZA = 100g de Pedigree® Adulto
+                    Seco Las necesidades de cada perro pueden variar.
+                  </dd>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                  <div class="col-md-4 col-6">
+                    <label class="mb-2">PARA RAZAS:</label>
+                    <select
+                      class="form-select border border-secondary"
+                      style="height: 35px"
+                    >
+                      <option>Todas las razas</option>
+                    </select>
+                  </div>
+                  <!-- col.// -->
+                  <div class="col-md-4 col-6 mb-3">
+                    <label class="mb-2 d-block">CANTIDAD</label>
+                    <div class="input-group mb-3" style="width: 170px">
+                      <button
+                        class="btn btn-white border border-secondary px-3"
+                        type="button"
+                        id="button-addon1"
+                        data-mdb-ripple-color="dark"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        type="text"
+                        class="form-control text-center border border-secondary"
+                        placeholder="1"
+                        aria-label="Example text with button addon"
+                        aria-describedby="button-addon1"
+                      />
+                      <button
+                        class="btn btn-white border border-secondary px-3"
+                        type="button"
+                        id="button-addon2"
+                        data-mdb-ripple-color="dark"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-success shadow-0"> Comprar ahora </a>
+                <a href="#" class="btn btn-primary shadow-0">
+                  <i class="me-1 fa fa-shopping-basket"></i> Agregar al carrito
+                </a>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+      <!-- encabezado 2 -->
+      <div class="row mt-3 pt-3 border-top">
+        <div class="col-10 fs-3 fw-bold">Tambien te sugerimos</div>
+        <div class="col-2 text-end">
+          <a href="#" class="text-success fw-bold text-decoration-underline"
+            >Ver más</a
+          >
+        </div>
+      </div>
+      <!-- productos -->
+      <div class="container-fluid">
+        <div class="row my-3 card-producto d-flex justify-content-center">
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div style="width: 12rem">
+              <a href="detalle.html">
+                <img
+                  src="img/0210125238_ARENA_SANITARIA_AMERICALITTER_CLEAN_PAWS.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">$8.990</h5>
+                <div class="fw-light">
+                  <span class="badge text-bg-secondary bg-opacity-25"
+                    >1 un</span
+                  >
+                </div>
+                <div class="fw-light">Americalitter</div>
+                <p class="card-text">Arena Sanitaria Clean Paws 7 KG</p>
+                <div class="d-grid col-12">
+                  <a
+                    href="#"
+                    class="btn btn-success text-center fw-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAviso"
+                    >Agregar</a
+                  >
+                </div>
+              </div>
+              <div class="justify-content-start">
+                <i class="fa-solid fa-star text-warning"></i>
+                4.9
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div style="width: 12rem">
+              <a href="detalle.html">
+                <img
+                  src="img/0210125238_ARENA_SANITARIA_AMERICALITTER_CLEAN_PAWS.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">$8.990</h5>
+                <div class="fw-light">
+                  <span class="badge text-bg-secondary bg-opacity-25"
+                    >1 un</span
+                  >
+                </div>
+                <div class="fw-light">Americalitter</div>
+                <p class="card-text">Arena Sanitaria Clean Paws 7 KG</p>
+                <div class="d-grid col-12">
+                  <a
+                    href="#"
+                    class="btn btn-success text-center fw-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAviso"
+                    >Agregar</a
+                  >
+                </div>
+              </div>
+              <div class="justify-content-start">
+                <i class="fa-solid fa-star text-warning"></i>
+                4.9
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div style="width: 12rem">
+              <a href="detalle.html">
+                <img
+                  src="img/0210125238_ARENA_SANITARIA_AMERICALITTER_CLEAN_PAWS.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">$8.990</h5>
+                <div class="fw-light">
+                  <span class="badge text-bg-secondary bg-opacity-25"
+                    >1 un</span
+                  >
+                </div>
+                <div class="fw-light">Americalitter</div>
+                <p class="card-text">Arena Sanitaria Clean Paws 7 KG</p>
+                <div class="d-grid col-12">
+                  <a
+                    href="#"
+                    class="btn btn-success text-center fw-bold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAviso"
+                    >Agregar</a
+                  >
+                </div>
+              </div>
+              <div class="justify-content-start">
+                <i class="fa-solid fa-star text-warning"></i>
+                4.9
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer class="pt-3 mt-5">
+        <ul class="nav justify-content-evenly border-top bg-light border-top">
+          <li class="nav_item">
+            <div class="nav p-3 fw-bold">Centro de Ayuda</div>
+            <ul class="flex-colum my-2">
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Problemas</a
+                >
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Informacion de pago</a
+                >
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Como modificar mis datos</a
+                >
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Modos de entrega</a
+                >
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#">Locales</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_item">
+            <div class="nav p-3 fw-bold">Nosotros</div>
+            <ul class="flex-colum my-2">
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Compromisos</a
+                >
+              </li>
+
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#">Locales</a>
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Productos</a
+                >
+              </li>
+              <li class="nav py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  >Proveedores</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav_item">
+            <ul class="flex-colum my-2"></ul>
+            <div class="nav pt-3 fw-bold">Siguenos</div>
+            <ul class="d-flex my-2">
+              <li class="nav-item list-unstyled py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="nav-item list-unstyled py-2 ms-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="nav-item list-unstyled py-2 ms-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  ><i class="fa-brands fa-tiktok"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="nav pt-3 fw-bold">Medios de pago</div>
+            <ul class="d-flex my-2">
+              <li class="nav-item list-unstyled py-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  ><i class="fa-brands fa-cc-visa"></i
+                ></a>
+              </li>
+              <li class="nav-item list-unstyled py-2 ms-2">
+                <a class="text-decoration-none text-muted" href="#"
+                  ><i class="fa-brands fa-cc-mastercard"></i
+                ></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

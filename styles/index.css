@@ -1,0 +1,35 @@
+.bar-item {
+  margin-right: 4px;
+}
+
+
+.card-producto div {
+  margin-bottom: 10px;
+}
+.imagen-publi {
+  width: 100%;
+}
+.imagen-publi2 {
+  width: 100%;
+  height: 100%;
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover; /* Esto hace que la imagen cubra el área especificada */
+}
+@media (max-width: 990px) {
+  .barra-superior {
+    height: 30px; /* Ajustar la altura deseada */
+    .bar-item {
+      font-size: 10px;
+    }
+  }
+}
+
+/* Media query para dispositivos grandes */
+@media (min-width: 990px) {
+  .barra-superior {
+    height: 50px; /* Ajustar la altura deseada */
+  }
+}
+
