@@ -45,6 +45,8 @@ const listadoProductos = [
 ];
 const IVA = 1.19;
 let total = 0;
+const divProductos = document.getElementById("carrito");
+
 const calcularTotal = () => {
     total = 0;
     if (productos.length != 0) {
@@ -55,9 +57,8 @@ const calcularTotal = () => {
         return;
     }
     else
-        total = 0;
+    total = 0;
 }
-const divProductos = document.getElementById("carrito");
 
 const listarProductos = () => {
     console.log(divProductos);
@@ -174,12 +175,12 @@ const listarProductos = () => {
 
 }
 
-
 const eliminarProducto = (i) => {
     productos.splice(i, 1);
     calcularTotal();
     listarProductos()
 }
+
 const agregarProducto = () => {
     productos.push({ precio: 100, descripcion: "jabon" });
     calcularTotal();
