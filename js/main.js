@@ -1,49 +1,61 @@
-//solo probe cambiar de rama
+//productos del carrito
 const productos = [{
-    precio: 1500,
+    id:1,
+    precio: 890,
     descripcion: "Comida perro blanda 100gr",
     img: "img/685421-280-280.webp",
     marca: "Pedigree",
-    valoracion: 4.9
+    valoracion: 4.9,
+    cantidad:1
 }, {
-    precio: 1500,
-    descripcion: "Coca-Cola 3lt",
-    img: "img/763510-450-450.webp",
-    marca: "Coca-Cola",
-    valoracion: 4.9
+    id:2,
+    precio: 8900,
+    descripcion: "Arena Sanitaria Clean Paws 7K G",
+    img: "img/0210125238_ARENA_SANITARIA_AMERICALITTER_CLEAN_PAWS.png",
+    marca: "Americalitter",
+    valoracion: 4.9,
+    cantidad:1
 },
 {
+    id:3,
     precio: 1500,
     descripcion: "Alimento Seco Perro Adulto 15 Kg",
     img: "img/perrarinawebp.webp",
     marca: "Pedigree",
-    valoracion: 4.9
+    valoracion: 4.9,
+    cantidad:1
 }
 ];
-
+//productos de la tienda
 const listadoProductos = [
     {
-        precio: 1500,
+        id:1,
+        precio: 890,
         descripcion: "Comida perro blanda 100gr",
         img: "img/685421-280-280.webp",
         marca: "Pedigree",
-        valoracion: 4.9
+        valoracion: 4.9,
+        cantidad:1
     }, {
-        precio: 1500,
-        descripcion: "Coca-Cola 3lt",
-        img: "img/763510-450-450.webp",
-        marca: "Coca-Cola",
-        valoracion: 4.9
+        id:2,
+        precio: 8900,
+        descripcion: "Arena Sanitaria Clean Paws 7K G",
+        img: "img/0210125238_ARENA_SANITARIA_AMERICALITTER_CLEAN_PAWS.png",
+        marca: "Americalitter",
+        valoracion: 4.9,
+        cantidad:1
     },
     {
+        id:3,
         precio: 1500,
         descripcion: "Alimento Seco Perro Adulto 15 Kg",
         img: "img/perrarinawebp.webp",
         marca: "Pedigree",
-        valoracion: 4.9
+        valoracion: 4.9,
+        cantidad:1
     }
 ];
-const IVA = 1.19;
+
 let total = 0;
 const divProductos = document.getElementById("carrito");
 
@@ -52,7 +64,7 @@ const calcularTotal = () => {
     if (productos.length != 0) {
 
         productos.forEach(producto => {
-            total += parseInt(producto.precio) * IVA;
+            total += parseInt(producto.precio)*parseInt(producto.cantidad) ;
         });
         return;
     }
@@ -134,11 +146,12 @@ const listarProductos = () => {
         const btnPlus = document.createElement("button");
         btnPlus.setAttribute("type", "button");
         btnPlus.classList.add("btn", "btn-success");
+        btnPlus.addEventListener("click", () => {agregarCantidad(index),calcularTotal(),listarProductos()});
         btnPlus.innerHTML = '<i class="fa-solid fa-plus"></i>';
 
         const quantity = document.createElement("div");
         quantity.classList.add("px-1");
-        quantity.textContent = "1 un.";
+        quantity.textContent = `${producto.cantidad} un.`;
 
         btnGroup.appendChild(btnDelete);
         btnGroup.appendChild(quantity);
@@ -159,13 +172,23 @@ const listarProductos = () => {
     }
     );
 
-    // Crear el pie de página
+    // Crear el pie de carrito
     const offcanvasFooter = document.createElement("div");
     offcanvasFooter.classList.add("offcanvas-footer");
+
     const footerRow = document.createElement("div");
-    footerRow.classList.add("mx-2", "pb-3", "fw-bold", "fs-4")
-    footerRow.textContent = `El monto final es $${total} pesos`;
+    footerRow.classList.add("row","mx-2", "pb-3",  "fs-5")
+    footerRow.textContent = `El monto final es $${total}`;
+    const footerRow2=document.createElement("div");
+    footerRow2.classList.add("row","d-flex","justify-content-end","pb-3");
+    const btnComprar=document.createElement("div");
+    btnComprar.classList.add("col-5","btn","btn-success")
+    btnComprar.textContent ="Comprar";
+
+    
+    footerRow2.appendChild(btnComprar);
     offcanvasFooter.appendChild(footerRow)
+    offcanvasFooter.appendChild(footerRow2);
 
     // Agregar elementos al DOM
     divProductos.appendChild(offcanvasHeader);
@@ -174,15 +197,26 @@ const listarProductos = () => {
 
 
 }
+const agregarCantidad=(index)=>{
+    return productos[index].cantidad++;
+    
+}
 
 const eliminarProducto = (i) => {
-    productos.splice(i, 1);
+    if(productos[i].cantidad>1){
+        productos[i].cantidad--
+    }
+    else{
+        
+        productos.splice(i, 1);
+    }
     calcularTotal();
     listarProductos()
 }
 
-const agregarProducto = () => {
-    productos.push({ precio: 100, descripcion: "jabon" });
+const agregarProducto = (id) => {
+    const productoelegido = listadoProductos.find(producto => producto.id === id)
+    productos.push(productoelegido);
     calcularTotal();
     listarProductos();
 };
