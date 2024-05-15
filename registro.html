@@ -173,7 +173,6 @@
               aria-controls="offcanvasRight"
             >
               <i class="fa-solid fa-cart-shopping"></i>
-             
             </button>
           </div>
         </div>
@@ -181,61 +180,116 @@
       <!--Register start-->
       <section class="vh-100 my-5">
         <div class="container h-100 my-4">
-          <div class="row d-flex justify-content-center align-items-center h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
             <div class="col-lg-12 col-xl-11">
-              <div class="card text-black" style="border-radius: 25px;">
+              <div class="card text-black" style="border-radius: 25px">
                 <div class="card-body p-md-5">
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">REGISTRO</p>
-                      <form class="mx-1 mx-md-4" method="post" for="">
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                        REGISTRO
+                      </p>
+                      <form class="mx-1 mx-md-4" for="" id="miRegistro">
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-2 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form-newuser">Nombre Completo</label>
-                            <input type="text" id="form-newuser" class="form-control" placeholder="Nombre Completo"
-                              required />
+                            <label class="form-label" for="nameUser"
+                              >Nombre Completo</label
+                            >
+                            <input
+                              type="text"
+                              id="nameUser"
+                              class="form-control"
+                              placeholder="Nombre Completo"
+                            />
+                            <div
+                              id="nameUserError"
+                              class="invalid-feedback"
+                            ></div>
                           </div>
                         </div>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-2 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form-email">Correo Electr&oacute;nico</label>
-                            <input type="email" id="form-email" class="form-control" placeholder="Correo Electrónico"
-                              required />
+                            <label class="form-label" for="email"
+                              >Correo Electr&oacute;nico</label
+                            >
+                            <input
+                              type="email"
+                              id="email"
+                              class="form-control"
+                              placeholder="Correo Electrónico"
+                            />
+                            <div id="emailError" class="invalid-feedback"></div>
                           </div>
                         </div>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-2 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form-passwd">Contrase&ntilde;a</label>
-                            <input type="password" id="form-passwd" class="form-control" placeholder="Contraseña..."
-                              required />
+                            <label class="form-label" for="password"
+                              >Contrase&ntilde;a</label
+                            >
+                            <input
+                              type="password"
+                              id="password"
+                              class="form-control"
+                              placeholder="Contraseña..."
+                            />
+                            <div
+                              id="passwordError"
+                              class="invalid-feedback"
+                            ></div>
                           </div>
-                          <!--aaaaaaa-->
                         </div>
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-key fa-lg me-2 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="form-confipasswd">Confirmar Contrase&ntilde;a</label>
-                            <input type="password" id="form-confipasswd" class="form-control"
-                              placeholder="Confirmar Contraseña..." required />
+                            <label class="form-label" for="passwordConfirmation"
+                              >Confirmar Contrase&ntilde;a</label
+                            >
+                            <input
+                              type="password"
+                              id="passwordConfirmation"
+                              class="form-control"
+                              placeholder="Confirmar Contraseña..."
+                            />
+                            <div id="passwordConfirmationError" class="invalid-feedback"></div>
                           </div>
                         </div>
-                        <div class="form-check d-flex justify-content-center mb-5">
-                          <input class="form-check-input me-2" type="checkbox" value="" id="form-privacid" />
+                        <div
+                          class="form-check d-flex justify-content-center mb-5"
+                        >
+                          <input
+                            class="form-check-input me-2"
+                            type="checkbox"
+                            value=""
+                            id="form-privacid"
+                          />
                           <label class="form-check-label" for="form-privacid">
-                            Estoy de acuerdo con todas las <a href="#!">pol&iacute;tica de privacidad.</a>
+                            Estoy de acuerdo con todas las
+                            <a href="#!">pol&iacute;tica de privacidad.</a>
                           </label>
                         </div>
-                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                        <div
+                          class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                        >
+                          <button type="submit" class="btn btn-primary btn-lg">
+                            Registrarse
+                          </button>
                         </div>
                       </form>
                     </div>
                     <div
-                      class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2  justify-content-center">
-                      <img src="img/register/Flix.png" class="img-fluid" alt="company logo" title="The Flix House">
+                      class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 justify-content-center"
+                    >
+                      <img
+                        src="img/register/Flix.png"
+                        class="img-fluid"
+                        alt="company logo"
+                        title="The Flix House"
+                      />
                     </div>
                   </div>
                 </div>
@@ -246,13 +300,12 @@
       </section>
       <!--Register end-->
       <!-- carrito de compra -->
-      <div 
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="carrito"
-      aria-labelledby="offcanvasRightLabel">
-
-      </div>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="carrito"
+        aria-labelledby="offcanvasRightLabel"
+      ></div>
       <!-- footer -->
       <footer class="pt-3 mt-5">
         <ul class="nav justify-content-evenly border-top bg-light border-top">
@@ -347,6 +400,7 @@
       </footer>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/validations.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
