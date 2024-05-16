@@ -18,7 +18,7 @@ const productos = [{
 },
 {
     id:3,
-    precio: 1500,
+    precio: 32900,
     descripcion: "Alimento Seco Perro Adulto 15 Kg",
     img: "img/perrarinawebp.webp",
     marca: "Pedigree",
@@ -47,7 +47,7 @@ const listadoProductos = [
     },
     {
         id:3,
-        precio: 1500,
+        precio: 32900,
         descripcion: "Alimento Seco Perro Adulto 15 Kg",
         img: "img/perrarinawebp.webp",
         marca: "Pedigree",

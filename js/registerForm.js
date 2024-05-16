@@ -25,25 +25,25 @@ $(document).ready(()=> {
 
         // Verificar si los campos están vacíos
         if (!username||!email || !password || !confirmPassword) {
-            $('#error-message').text('Por favor, complete todos los campos.').addClass('invalid-feedback').show();
+            $('#error-message').text('Por favor, complete todos los campos.').addClass('alert alert-danger').show();
             return;
         }
         if(validarEmail(email)!== true){
-            $('#error-message').text('Por favor ingresa un correo electrónico válido').addClass('invalid-feedback').show()
+            $('#error-message').text('Por favor ingresa un correo electrónico válido').addClass('alert alert-danger').show()
             return;
         }
         if(validarPass(password)!== true){
-            $('#error-message').text('La contraseña debe tener al menos 8 caracteres').addClass('invalid-feedback').show()
+            $('#error-message').text('La contraseña debe tener al menos 8 caracteres').addClass('alert alert-danger').show()
             return;
         }
         // Verificar si las contraseñas coinciden
         if (password !== confirmPassword) {
-            $('#error-message').text('Las contraseñas no coinciden.').addClass('invalid-feedback').show();
+            $('#error-message').text('Las contraseñas no coinciden.').addClass('alert alert-danger').show();
             return;
         }
 
        
-        $('#error-message').text('Registro exitoso.').removeClass('invalid-feedback').addClass('valid-feedback').show();
+        $('#error-message').text('Registro exitoso.').removeClass('alert alert-danger').addClass('alert alert-success').show();
 
     });
 });
