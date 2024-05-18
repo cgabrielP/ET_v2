@@ -159,8 +159,14 @@ const eliminarProducto = (i) => {
 }
 
 const agregarProducto = (id) => {
-    const productoelegido = listadoProductos.find(producto => producto.id === id)
-    productos.push(productoelegido);
+    const productoElegido = listadoProductos.find(producto => producto.id === id)
+    if(productos.includes(productoElegido)){
+        productoElegido.cantidad++;
+        calcularTotal();
+        listarProductos();
+        return;
+    }
+    productos.push(productoElegido);
     calcularTotal();
     listarProductos();
 };
