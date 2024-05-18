@@ -1,9 +1,10 @@
-import { listadoProductos } from "./db.js";
-import { agregarProducto } from "./main.js";
+import { listadoProductos, productos } from "./db.js";
+import { agregarProducto,eliminarProducto,agregarCantidad } from "./main.js";
 
 const divListado=document.getElementById("listado");
 
 const mostrarProductos = () => {
+    divListado.innerHTML = '';
     const rowProductos = document.createElement("div");
     rowProductos.classList.add("row", "my-5", "card-producto", "d-flex", "justify-content-start");
 
@@ -51,16 +52,54 @@ const mostrarProductos = () => {
         parNombre.textContent=prod.descripcion;
         cardBody.appendChild(parNombre);
 
-        const divBtn=document.createElement("div");
-        divBtn.classList.add("d-grid", "col-12");
-        const anchorBtn=document.createElement("a");
-        anchorBtn.classList.add("btn", "btn-success","text-center","fw-bold");
-        anchorBtn.addEventListener("click",()=>{
-                agregarProducto(index+1)
-        });
-        anchorBtn.textContent="Agregar";
-        divBtn.appendChild(anchorBtn);
-        cardBody.appendChild(divBtn);
+        const productoEnCarrito = productos.find(producto => producto.id === prod.id);
+
+        if (productoEnCarrito) {
+            
+            const btnGroup = document.createElement("div");
+            btnGroup.classList.add("btn-group", "align-items-center", "mt-2");
+            btnGroup.setAttribute("role", "group");
+            btnGroup.setAttribute("aria-label", "Basic example");
+
+            const btnDelete = document.createElement("button");
+            btnDelete.setAttribute("type", "button");
+            btnDelete.addEventListener("click", () => {
+                eliminarProducto(prod.id);
+            });
+            btnDelete.classList.add("btn", "btn-success");
+            btnDelete.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+
+            const quantity = document.createElement("div");
+            quantity.classList.add("px-1","pt-2");
+            quantity.textContent = `${prod.cantidad} un.`;
+
+            const btnPlus = document.createElement("button");
+            btnPlus.setAttribute("type", "button");
+            btnPlus.classList.add("btn", "btn-success");
+            btnPlus.addEventListener("click", () => {
+                agregarCantidad(prod.id);
+            });
+            btnPlus.innerHTML = '<i class="fa-solid fa-plus"></i>';
+
+            btnGroup.appendChild(btnDelete);
+            btnGroup.appendChild(quantity)
+            btnGroup.appendChild(btnPlus);
+            cardBody.appendChild(btnGroup);
+        } else {
+            // Si el producto no está en el carrito, genera el divBtn
+            const divBtn = document.createElement("div");
+            divBtn.classList.add("d-grid", "col-12");
+
+            const anchorBtn = document.createElement("a");
+            anchorBtn.classList.add("btn", "btn-success", "text-center", "fw-bold");
+            anchorBtn.addEventListener("click", () => {
+                agregarProducto(prod.id),console.log(productos);
+            });
+            anchorBtn.textContent = "Agregar";
+
+            divBtn.appendChild(anchorBtn);
+            cardBody.appendChild(divBtn);
+        }
 
         const divValoracion=document.createElement("div");
         divValoracion.classList.add("justify-content-start");
@@ -83,5 +122,4 @@ const mostrarProductos = () => {
     })
     divListado.appendChild(rowProductos);
 };
-
-mostrarProductos();
+export {mostrarProductos}

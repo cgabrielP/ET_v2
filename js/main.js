@@ -1,4 +1,5 @@
 import { listadoProductos,productos } from "./db.js";
+import { mostrarProductos } from "./showProducts.js";
 
 let total = 0;
 const divProductos = document.getElementById("carrito");
@@ -17,7 +18,6 @@ const calcularTotal = () => {
 }
 
 const listarProductos = () => {
-    console.log(divProductos);
     divProductos.innerHTML = "";
 
 
@@ -82,7 +82,7 @@ const listarProductos = () => {
         const btnDelete = document.createElement("button");
         btnDelete.setAttribute("type", "button");
         btnDelete.addEventListener("click", () => {
-            eliminarProducto(index);
+            eliminarProducto(producto.id);
         });
         btnDelete.classList.add("btn", "btn-success");
         btnDelete.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
@@ -90,7 +90,7 @@ const listarProductos = () => {
         const btnPlus = document.createElement("button");
         btnPlus.setAttribute("type", "button");
         btnPlus.classList.add("btn", "btn-success");
-        btnPlus.addEventListener("click", () => {agregarCantidad(index),calcularTotal(),listarProductos()});
+        btnPlus.addEventListener("click", () => {agregarCantidad(producto.id)});
         btnPlus.innerHTML = '<i class="fa-solid fa-plus"></i>';
 
         const quantity = document.createElement("div");
@@ -141,21 +141,29 @@ const listarProductos = () => {
 
 
 }
-const agregarCantidad=(index)=>{
-    return productos[index].cantidad++;
-    
+const agregarCantidad = (id) => {
+    const producto = productos.find(prod => prod.id === id);
+    if (producto) {
+        producto.cantidad ++;
+    }
+    mostrarProductos(); // Actualiza la vista
+    calcularTotal();
+    listarProductos();
+    mostrarProductos();
 }
 
-const eliminarProducto = (i) => {
-    if(productos[i].cantidad>1){
-        productos[i].cantidad--
+const eliminarProducto = (id) => {
+    const index = productos.findIndex(prod => prod.id === id);
+    console.log(index);
+    if(productos[index].cantidad>1){
+        productos[index].cantidad--
     }
     else{
-        
-        productos.splice(i, 1);
+        productos.splice(index, 1);
     }
     calcularTotal();
-    listarProductos()
+    listarProductos();
+    mostrarProductos();
 }
 
 const agregarProducto = (id) => {
@@ -164,12 +172,16 @@ const agregarProducto = (id) => {
         productoElegido.cantidad++;
         calcularTotal();
         listarProductos();
+        mostrarProductos();
         return;
     }
     productos.push(productoElegido);
     calcularTotal();
     listarProductos();
+    mostrarProductos();
+
 };
 
 listarProductos();
-export { agregarProducto};
+document.addEventListener('DOMContentLoaded', mostrarProductos);
+export { agregarProducto,eliminarProducto,agregarCantidad};
